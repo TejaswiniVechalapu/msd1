@@ -36,6 +36,94 @@
         .right1{
             float: right;
         }
+        .slideshow-container {
+            max-width: 2000px;
+            position: relative;
+            margin: auto;
+          }
+          
+          
+          .mySlides {
+            display: none;
+          }
+          .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+          }
+          
+          
+          .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+          }
+          
+          
+          .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+          }
+          
+          
+          
+          
+          
+          
+          .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+          }
+          
+          
+          .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+          }
+          
+          
+          .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+          }
+          
+          
+          .active, .dot:hover {
+            background-color: #717171;
+          }
+          
+          
+          .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+          }
+          
+          
+          @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+          }
     </style>
     <body>
         <table style="background-color:white;">
@@ -44,8 +132,8 @@
                     <img src="https://media.licdn.com/dms/image/C4E0BAQEThhJqvz22OA/company-logo_200_200/0/1656652477995?e=2147483647&v=beta&t=7oiMKlkN1y2S0HVXTv-Et07QrMv3g_ppDGWudTh42bA" style="float: left;">
                 </th>
                 <th style="line-height: 0.8;">
-                    <h1 style="color:green">Prasad V. Potluri</h1>
-                    <h1 style="color:green">Siddhartha Institute of Technology</h1>
+                    <h1 style="color: green;">Prasad V. Potluri</h1>
+                    <h1 style="color: green;">Siddhartha Institute of Technology</h1>
                     <h2>(Autonomous)</h2>
                     <h3>Approved by AICTE and Affiliated to JNTU Kakinada</h3>
                     <h3>Sposored By: Siddhartha Academy of General and Technical Education,Vijayawada</h3>
@@ -74,7 +162,34 @@
             <a herf="">Facilities</a>
             <a href="">Social Media</a>
         </div>
-        <div class="slide"><img src="https://www.targetadmission.com/img/colleges/optimized/600/IMG-1-2509654.jpg" width="100%" heigth="1000px"></div>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="https://www.pvpsiddhartha.ac.in/new_images/2022-23%206plus.jpg" style="width:100%" "height:auto">
+              <div class="text">Caption Text</div>
+            </div>
+         
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="https://www.pvpsiddhartha.ac.in/new_images/last%203%20years%20top%205.jpg" style="width:100%" "height:auto">
+              <div class="text">Caption Two</div>
+            </div>
+         
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="https://www.pvpsiddhartha.ac.in/new_images/Banner4.jpg" style="width:100%" "height:auto">
+              <div class="text">Caption Three</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+        
         <div class="course"><h1>COURSE OFFERS</h1></div>
         <table>
             <tr>
@@ -124,5 +239,45 @@
                 <th class="right1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1JWf4RcpbgimlnpmRRN5cnHVeMDP8vCBCftILMSdIvP0UW9Aq861_vUP-lDppoawoi8&usqp=CAU" width="700px" height="500px"></th>
             </tr>
         </table>
+        <div class="course"><h1>Placement & Training</h1></div>
+        <img src="https://www.pvpsiddhartha.ac.in/new_images/p6.jpg" width="500px">
+        <img src="https://www.pvpsiddhartha.ac.in/placement_icons/7_22.png" width="500px">
+        <img src="https://www.pvpsiddhartha.ac.in/placement_icons/17_22.png" width="500px">
+        <div class="course"><h1>About Us</h1>
+        <a href="#">Aboutus</a>
+        </div>
     </body>
 </html>
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+
+// Next/previous controls
+function plusSlides(n) {
+showSlides(slideIndex += n);
+}
+
+
+// Thumbnail image controls
+function currentSlide(n) {
+showSlides(slideIndex = n);
+}
+
+
+function showSlides(n) {
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+  </script>
